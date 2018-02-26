@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		  http://www.springframework.org/schema/beans/spring-beans.xsd
+		  http://www.springframework.org/schema/context 
+		  http://www.springframework.org/schema/context/spring-context.xsd
+		  http://www.springframework.org/schema/aop 
+		  http://www.springframework.org/schema/aop/spring-aop.xsd
+		  http://www.springframework.org/schema/tx 
+		  http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+	<!-- 配置数据源 destroy-method="close" -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" /><!-- 
+			指定连接数据库驱动 -->
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/undoPuzzled" /><!-- 
+			指定连接数据库地址 -->
+		<property name="user" value="root" /><!--连接数据库是用户名 -->
+		<property name="password" value="123456" /><!--连接数据库是密码 -->
+		<property name="maxPoolSize" value="40" /><!-- 数据库连接池中最大连接数 -->
+		<property name="minPoolSize" value="1" /><!-- 数据库连接池中最小连接数 -->
+		<property name="initialPoolSize" value="1" /><!-- 初始化数据库连接池时连接的数量 -->
+		<property name="maxIdleTime" value="20" /><!-- 数据库最大空闲时间 -->
+	</bean>
+	
+	   <!-- 定义 hibernate 的sessionFactory   -->
+     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+       <!--  <property name="configLocations" value="classpath:hibernate.cfg.xml"></property>  -->
+        <!-- <property name="mappingLocations" value="classpath:mapping/Good.hbm.xml"></property> -->
+        <property name="packagesToScan">    
+            <list>    
+                <value>cn.model.Card</value>     
+                <value>cn.model.Comment</value>    
+                <value>cn.model.User</value>   
+            </list>    
+        </property>  
+        <property name="mappingResources">
+            <list>
+                <value>hibernate/Card.hbm.xml</value>
+                <value>hibernate/Comment.hbm.xml</value>
+                <value>hibernate/User.hbm.xml</value>
+            </list>
+        </property> 
+        <property name="hibernateProperties">
+            <value>
+                hibernate.current_session_context_class=thread
+                hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+                hibernate.hbm2ddl.auto=update
+                hibernate.show_sql=true
+                hibernate.format_sql=true
+            </value>
+        </property>
+    </bean>
+
+    <!-- 配置Spring的声明式事务 -->
+    <!-- 1.配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="dataSource" ref="dataSource"/> 
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!--  2.配置事务属性，需要事务管理器 -->
+     <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get" read-only="true"/>
+            <tx:method name="*"/>
+        </tx:attributes>  
+    </tx:advice> 
+   <!--  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>  
+    </tx:advice> -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!--  3.配置事务切点，并把切点和事务关联起来 -->
+    <aop:config>
+        <aop:pointcut expression="execution(* peilow.model.dao.impl.*.*(..))" id="txPointcut"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+    </aop:config> 
+</beans>

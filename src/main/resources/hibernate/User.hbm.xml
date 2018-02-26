@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE hibernate-mapping PUBLIC 
+        "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" 
+     >  
+     
+   <!-- 映射文件开始 -->    
+     <hibernate-mapping> 
+     <!-- 下面的class节点定义了Province类和对应数据库表之间的关联关系 --> 
+     <class name="cn.model.User" table="User" >  
+     <!-- 下面的两个节点定义了Province类中的属性和该类对应数据库表中的字段之间的关联关系，其中userId为对应数据库表的主键 --> 
+	    <id name="userId" type="java.lang.Integer" column="userId" > 
+	    <!-- 指定主键的生成方式，native，是最常使用的，使用数据库的方式 -->
+	        <generator class="native" /> 
+	    </id> 
+	    <property name="userName" type="java.lang.String" column="userName"/>
+	    <property name="address" type="java.lang.String" column="address"/>
+	    <property name="phone" type="java.lang.String" column="phone"/>
+	    <property name="headPicture" type="java.lang.String" column="headPicture"/>
+	    <!-- 	    <set name="一端中定义多端的集合名" table="多端表名" cascade="save-update">
+            <key column="多端表中外键名"></key>
+            <one-to-many class="多端类权限定名"/>
+        </set> -->
+	    <!-- <set name="cards" table="Card" cascade="save-update">
+            <key column="userId"></key>
+        <one-to-many class="Card"/>
+        </set> -->
+     </class>
+     </hibernate-mapping>

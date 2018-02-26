@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*共用*/
+.comWidth{margin-left:auto; margin-right:auto}
+.leftArea{float:left;}
+.rightArea{float:right}
+.hide{display:none}
+.show{display:block}
+/*topbar*/
+.topbar{line-height:31px}
+.homePage{
+	background:url(../images/icon/home.png) left center no-repeat; padding-left:19px;
+	font-weight:bold}
+.topbar a:hover{color:#F00}
+/*logo*/
+.logobar{height:85px;background:#069}
+.logo{padding-left:20px; padding-top:10px}
+.search_box{ width:430px;padding-top:23px;padding-left:185px}
+.search_text{ width:350px; height:35px;padding:0 5px; background:#FFF; line-height:35px\9;/*css hack  \9代表所有的ie浏览器*/}
+.search_btn{ width:70px; height:35px; font-size:15px; font-family:Verdana, Geneva, sans-serif; background-color:#C90; color:#FFF;}
+/*shopCar*/
+.shopCar{width:145px; height:35px; background:#F93; margin-top:23px; font-size:14px; font-family:Verdana, Geneva, sans-serif;  line-height:35px;}
+.shopText{width:87px; height:100%;  border-right:#E27A00 solid 1px; text-indent:40px}
+
+/*导航*/
+.navBox{ height:35px; background:#00C; color:#FFF}
+.shopClass{width:190px; position:relative;}
+.shopClass i{width:11px; height:7px; overflow:hidden; background:url(../images/icon/arrow_down_nav.gif) left center no-repeat; display:inline-block; margin-left:11px}
+.shopClass h3{ line-height:35px; text-align:center}
+.nav,.shopClass{font-family:Verdana, Geneva, sans-serif}
+.nav{line-height:35px}
+.nav li{float:left}
+.nav a{height:35px; display:inline-block; padding:0 35px; color:#FFF}
+.nav .active{ background:#06F}
+
+/*商品弹出列表*/
+.shopClass_show{ background:#06F; position:absolute; left:0; top:35px; width:100%}
+.shopClass_show .lihover{ background:#FFF; border-left:1px #CCCCCC solid;}
+.shopClass_show .lihover .shopClass_item{ background-image:none}
+.shopClass_show .lihover .shopClass_list{ z-index:1000}
+.shopClass_item{padding:14px 10px; border-bottom:#3487F2 solid 1px; background:url(../images/icon/aLink.gif) 172px center no-repeat}
+.shopClass_item dt{height:22px}
+.shopClass_item .b{font:14px/1 Verdana, Geneva, sans-serif}
+.shopClass_item a{color:#FFF}
+.shopClass_item a:hover{ text-decoration:underline;}
+
+/*shopClass_item active 状态*/
+.shopClass_active{ background:#FFF; border-left:#06F solid 1px}
+.shopClass_item dt{ background:none}
+.shopClass_item a{color:#000}
+
+/*弹出的菜单*/
+.shopClass_list{width:568px;border:1px solid #FFF; position:absolute; left:190px; top:0px; z-index:-1; background:#FFF}
+.shopClass_cont{padding:2px 10px}
+.shopList_item{padding:10px 0; border-bottom:#ccc dotted 1px;}
+.shopList_item dt{color:#06F; font-weight:bold; height:24px;line-height:24px}
+.shopList_item dd{padding-left:68px; margin-top:-24px; line-height:24px}
+.shopList_item dd a{margin-right:5px;}
+
+/*banner部分*/
+.banner{ margin-bottom:75px}
+.banner_bar{float:right; background:#666; position:relative; overflow:hidden}
+.imgBox{position:absolute; left:0; top:0}
+.imgBox li{float:left}
+.imgBox img{ width:810px; height:326px; display:block}
+.imgNum{position:absolute; left:0; bottom:15px; width:100%; text-align:center}
+.imgNum a{ width:20px; height:5px; overflow:hidden; background:#FFF; display:inline-block; margin:0 3px}
+.imgNum .active{ background:#F93}
+.banner_big,
+.banner_big img{ width:810px; height:326px}
+.banner_big .imgBox{width:1620px; height:326px}
+
+.banner_sm,
+.banner_sm img{ width:190px; height:279px}
+.banner_sm .imgBox{ width:380px; height:279px}
+
+/*商品标题*/
+.shopTit{ width:180px; height:44px; font-family:Verdana, Geneva, sans-serif; line-height:44px; text-align:center; background:#000; margin-bottom:5px}
+.shopTit h3{font-size:24px; color:#FFF; font-weight:bold}
+.shopTit a{ color:#CCC}
+
+/*商品列表*/
+.shopList .leftArea{ width:186px;}
+.shopList .rightArea{ width:811px; border:#999 1px solid; border-bottom:#FF7201 solid 1px; height:279px;}
+
+/*商品列表-右侧*/
+.shopList_right{margin-right:-4px}
+.list_item{ width:202px; border-right:1px #666666 solid; border-bottom:1px #666 solid; height:279px; text-align:center; font-family:Verdana, Geneva, sans-serif; float:left}
+.shopList_item_img{ height:218px; padding-top:10px; padding-left:5px}
+.shopList_item_img img{ width:98%; height:218px; display:block;}
+.list_item h3{ font-size:16px; line-height:21px}
+.list_item p{ font-size:14px; color:#C90; line-height:21px}
+
+/*底部*/
+.footer{ width:100%; height:100px; text-align:center; background:#999; margin-top:50px; padding-top:20px}
+.footer i{ font-size:32px}
+.footer p{ font-size:12px; font-family:Georgia, "Times New Roman", Times, serif; color:#FFF; line-height:25px}
+.footer a{ font-size:32px; font-family:Georgia, "Times New Roman", Times, serif; color:#FFF; line-height:12px}
