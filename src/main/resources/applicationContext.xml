@@ -26,10 +26,10 @@
 		<property name="minPoolSize" value="1" /><!-- 数据库连接池中最小连接数 -->
 		<property name="initialPoolSize" value="1" /><!-- 初始化数据库连接池时连接的数量 -->
 		<property name="maxIdleTime" value="20" /><!-- 数据库最大空闲时间 -->
-	</bean>
+	 </bean>
 	
-	   <!-- 定义 hibernate 的sessionFactory   -->
-     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	  <!-- 定义 hibernate 的sessionFactory   -->
+     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
        <!--  <property name="configLocations" value="classpath:hibernate.cfg.xml"></property>  -->
         <!-- <property name="mappingLocations" value="classpath:mapping/Good.hbm.xml"></property> -->
@@ -49,38 +49,43 @@
         </property> 
         <property name="hibernateProperties">
             <value>
-                hibernate.current_session_context_class=thread
+                <!-- 配置声明式事务需要删除这句话 -->
+                <!--hibernate.current_session_context_class=thread 使用getCurrentSession() 方法获取session时 -->
                 hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
                 hibernate.hbm2ddl.auto=update
                 hibernate.show_sql=true
                 hibernate.format_sql=true
+                hibernate.autoReconnect=true<!-- 解决一个bug -->
             </value>
         </property>
     </bean>
 
     <!-- 配置Spring的声明式事务 -->
     <!-- 1.配置事务管理器 -->
-    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="dataSource" ref="dataSource"/> 
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <!-- <property name="dataSource" ref="dataSource"/>  -->
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <!--  2.配置事务属性，需要事务管理器 -->
+
+     <!--  2.配置事务属性，需要事务管理器 -->
      <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="get" read-only="true"/>
+            <!-- <tx:method name="get" read-only="true"/> -->
             <tx:method name="*"/>
         </tx:attributes>  
     </tx:advice> 
-   <!--  <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <tx:method name="*" propagation="REQUIRED"/>
-        </tx:attributes>  
-    </tx:advice> -->
     <tx:annotation-driven transaction-manager="transactionManager" />
     <!--  3.配置事务切点，并把切点和事务关联起来 -->
     <aop:config>
-        <aop:pointcut expression="execution(* peilow.model.dao.impl.*.*(..))" id="txPointcut"/>
+        <aop:pointcut expression="execution(* cn.daoImpl.*.*(..))" id="txPointcut"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
-    </aop:config> 
+    </aop:config>
+    
+    <!-- 配置Dao类的bean -->
+    
+    <bean id="UserDao" class="cn.daoImpl.UserDaoImpl">
+     <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
 </beans>

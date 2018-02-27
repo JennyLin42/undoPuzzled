@@ -32,6 +32,16 @@ public class User {
 	public String getHeadPicture() {
 		return headPicture;
 	}
+	public User() {
+		super();
+	}
+	public User(String userName, String address, String phone, String headPicture) {
+		super();
+		this.userName = userName;
+		this.address = address;
+		this.phone = phone;
+		this.headPicture = headPicture;
+	}
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", address=" + address + ", phone=" + phone

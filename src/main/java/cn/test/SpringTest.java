@@ -1,6 +1,7 @@
 package cn.test;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -26,4 +27,5 @@ public class SpringTest {
 		System.out.println(dataSource);
 		System.out.println(dataSource.getConnection());
 	}
+	
 }
