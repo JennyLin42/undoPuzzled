@@ -18,7 +18,7 @@ public class userUnitTest {
 	}
 	
 	/**
-	 * 测试获取数据总数
+	 * 第一个没有意义的测试
 	 * @throws SQLException
 	 */
 	@Test
@@ -29,12 +29,29 @@ public class userUnitTest {
 		
 		System.out.println(a.count());
 	}
-	
+	/**
+	 * 保存user
+	 */
 	@Test
 	public void testSaveUser(){
 		UserDao a =cxt.getBean(UserDao.class);
 		User user = new User("aaa","aaa","aaa","aaa");
 		a.saveUser(user);
 		//System.out.println(a.count());
+	}
+	
+	@Test
+	public void testGetUser(){
+		System.out.println("-----getUser----");
+		UserDao a =cxt.getBean(UserDao.class);
+		System.out.println(a.getUser(1));
+		
+	}
+	@Test
+	public void testLogin(){
+		System.out.println("-----Login----");
+		UserDao a =cxt.getBean(UserDao.class);
+		System.out.println(a.login(user));
+		
 	}
 }

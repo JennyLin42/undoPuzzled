@@ -3,6 +3,7 @@ package cn.daoImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
@@ -18,10 +19,35 @@ public class UserDaoImpl extends SessionUtil implements UserDao{
 	 */
 	public User getUser(int userId) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		Session session = getSession();
+        User user = (User)session.get(User.class, userId);
+		return user;
 	}
-	
+
+	/**
+	 * 保存用户信息
+	 */
+	public void saveUser(User user) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		session.save(user);
+	}
+
+	/**
+	 * 查询是否存在该用户
+	 */
+	public User login(User user) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		User currentUser = null;
+		String hql="from User where phone = "+user.getPhone();
+		Query query=session.createQuery(hql);
+		List<User> users=query.list();
+		if(users.size() >0){
+			currentUser = users.get(0);
+		}
+		return currentUser;
+	}
     /**
      * 统计个数
      */
@@ -38,14 +64,4 @@ public class UserDaoImpl extends SessionUtil implements UserDao{
 		System.out.println(a);
         return new ArrayList();
     }
-
-	public void saveUser(User user) {
-		// TODO Auto-generated method stub
-		Session session = this.getSession();
-		//Transaction tra = session.beginTransaction();
-		session.save(user);
-		//session.getTransaction().commit();
-		//session.close();
-	}
-
 }
