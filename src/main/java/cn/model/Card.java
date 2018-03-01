@@ -15,6 +15,26 @@ public class Card {
 	
 	
 	
+	public Card() {
+		super();
+	}
+	public Card(String cartTimeDate, int good, byte isCardDelete, String cartContent, User user) {
+		super();
+		this.cartTimeDate = cartTimeDate;
+		this.good = good;
+		this.isCardDelete = isCardDelete;
+		this.cartContent = cartContent;
+		this.user = user;
+	}
+	public Card(int cardId, String cartTimeDate, int good, byte isCardDelete, String cartContent, User user) {
+		super();
+		this.cardId = cardId;
+		this.cartTimeDate = cartTimeDate;
+		this.good = good;
+		this.isCardDelete = isCardDelete;
+		this.cartContent = cartContent;
+		this.user = user;
+	}
 	@Override
 	public String toString() {
 		return "Card [cardId=" + cardId + ", cartTimeDate=" + cartTimeDate + ", good=" + good + ", isCardDelete="

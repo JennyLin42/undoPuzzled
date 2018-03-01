@@ -20,6 +20,7 @@
 	    <!-- <many-to-one name="多端类中定义一端的属性名" class="一端类权限定名" column="多端表中外键名(一端ID)">
         </many-to-one> -->
         <!-- <many-to-one name="user" class="User" column="userId"></many-to-one> -->
-        <many-to-one name="user" column="userId"/>  
+        <!-- 配置 lazy="false" fetch="join" 避免出现懒加载异常 -->
+        <many-to-one name="user" lazy="false"  fetch="join"  column="userId" />  
      </class>
      </hibernate-mapping>

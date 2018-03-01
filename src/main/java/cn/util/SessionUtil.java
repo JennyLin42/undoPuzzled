@@ -9,6 +9,7 @@ public class SessionUtil {
 		return sessionFactory;
 	}
 	public void setSessionFactory(SessionFactory sessionFactory) {
+		System.out.println("ÒÑ¾­×¢ÈëSessionFactory");
 		this.sessionFactory = sessionFactory;
 	}
 	public Session getSession(){

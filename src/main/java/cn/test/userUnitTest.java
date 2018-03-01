@@ -37,7 +37,6 @@ public class userUnitTest {
 		UserDao a =cxt.getBean(UserDao.class);
 		User user = new User("aaa","aaa","aaa","aaa");
 		a.saveUser(user);
-		//System.out.println(a.count());
 	}
 	
 	@Test
@@ -50,8 +49,8 @@ public class userUnitTest {
 	@Test
 	public void testLogin(){
 		System.out.println("-----Login----");
+		User user = new User(1,"aaa","aaa","13631256158","aaa");
 		UserDao a =cxt.getBean(UserDao.class);
 		System.out.println(a.login(user));
-		
 	}
 }

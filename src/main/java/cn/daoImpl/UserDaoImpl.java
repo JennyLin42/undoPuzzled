@@ -19,6 +19,7 @@ public class UserDaoImpl extends SessionUtil implements UserDao{
 	 */
 	public User getUser(int userId) {
 		// TODO Auto-generated method stub
+		System.out.println("-----getSession----");
 		Session session = getSession();
         User user = (User)session.get(User.class, userId);
 		return user;

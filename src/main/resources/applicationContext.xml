@@ -85,7 +85,11 @@
     <!-- 配置Dao类的bean -->
     
     <bean id="UserDao" class="cn.daoImpl.UserDaoImpl">
-     <property name="sessionFactory" ref="sessionFactory"></property>
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="CardDao" class="cn.daoImpl.CardDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
 </beans>

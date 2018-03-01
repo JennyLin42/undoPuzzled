@@ -35,6 +35,14 @@ public class User {
 	public User() {
 		super();
 	}
+	public User(int userId, String userName, String address, String phone, String headPicture) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.address = address;
+		this.phone = phone;
+		this.headPicture = headPicture;
+	}
 	public User(String userName, String address, String phone, String headPicture) {
 		super();
 		this.userName = userName;
