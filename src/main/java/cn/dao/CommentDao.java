@@ -11,7 +11,7 @@ public interface CommentDao {
 	//添加评论
 	public boolean saveComment(Comment comment);
 	
-	//用户删除单个评论
+	//评论的用户删除单个评论
 	public boolean deleteComment(int commentId);
 	
 	//删除帖子的时候删除该帖子的评论
