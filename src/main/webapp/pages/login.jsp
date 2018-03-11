@@ -50,7 +50,7 @@ a.changecursor:hover{
 		<div class="layui-row">
 			<div class="logo">
 			<ul class="layui-nav  layui-bg-cyan">
-            	<li><a href="index.jsp" class="homePage" style="font-size:26px;">解忧驿站</a></li>
+            	<li><a href="index.jsp" class="homePage" style="font-size:26px;color:#fff;">解忧驿站</a></li>
             </ul>
 			</div>
 			<div class="header3">

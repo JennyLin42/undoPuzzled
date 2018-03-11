@@ -19,7 +19,7 @@ if (id == -1){
 									+ "<div class='layui-form layui-form-pane'>"
 									+ "<form>"
 									+ "<div class='layui-form-item'>"
-									+ "    <label for='L_email' class='layui-form-label'>账号</label>"
+									+ "    <label for='L_email' class='layui-form-label'>手机号</label>"
 									+ "    <div class='layui-input-inline'>"
 									+ "      <input type='text' id='username' name='username' required lay-verify='required' autocomplete='off' class='layui-input'>"
 									+ "</div>"
@@ -34,9 +34,7 @@ if (id == -1){
 									
 									+ "  <div class='layui-form-item' style='align:center; margin:0 0 0 70px;'>"
 									+ "    <button class='layui-btn' id='login' lay-filter='login' lay-submit>立即登录</button>"
-									+ "    <span style='padding-left:20px;'>"
-									+ "      <a class='changecursor' onclick='forget()'>忘记密码？</a>"
-									+ "    </span>"
+									
 									+ "  </div>"
 									+ " </div>"
 									+ " <div class='layui-form-item fly-form-app'>"
@@ -54,7 +52,7 @@ if (id == -1){
 									+ "<div class='layui-form layui-form-pane'>"
 									+ "<form>"
 									+ "<div class='layui-form-item'>"
-									+ "    <label for='L_email' class='layui-form-label'>账号</label>"
+									+ "    <label for='L_email' class='layui-form-label'>昵称</label>"
 									+ "    <div class='layui-input-inline'>"
 									+ "      <input type='text' id='username' name='username' required lay-verify='user' autocomplete='off' class='layui-input'>"
 									+ "</div>"
@@ -77,6 +75,13 @@ if (id == -1){
 									+ "      <input type='text' id='tel' name='tel' required lay-verify='phone' autocomplete='off' class='layui-input'>"
 									+ "</div>"
 									+ "</div>"
+									
+									+ "<div class='layui-form-item'>"
+									+ "    <label for='L_email' class='layui-form-label'>所在地</label>"
+									+ "    <div class='layui-input-inline'>"
+									+ "      <input type='text' id='email' name='mail' required lay-verify='email' placeholder='请输入个人所在地' autocomplete='off' class='layui-input'>"
+									+ "</div>"
+									+ "</div>"
 									//-------上传图片
 									+"<div class='layui-upload'>"
 									+"<button type='button' class='layui-btn' id='test1'>上传图片</button>"
@@ -86,12 +91,7 @@ if (id == -1){
 									+ "</div>"
 									+ "</div>"
 									//-------上传图片
-									+ "<div class='layui-form-item'>"
-									+ "    <label for='L_email' class='layui-form-label'>邮箱</label>"
-									+ "    <div class='layui-input-inline'>"
-									+ "      <input type='text' id='email' name='mail' required lay-verify='email' placeholder='请输入正确的邮箱地址' autocomplete='off' class='layui-input'>"
-									+ "</div>"
-									+ "</div>"
+									
 									+ "  <div class='layui-form-item' style='align:center; margin:0 0 0 70px;'>"
 									+ "    <button class='layui-btn' id='login' lay-filter='register' lay-submit>注册</button>"
 									+"     <button type='reset' class='layui-btn layui-btn-primary'>重置</button>"

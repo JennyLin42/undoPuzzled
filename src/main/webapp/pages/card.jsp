@@ -24,7 +24,7 @@
 		<div class="layui-row">
 			<div class="logo">
 			<ul class="layui-nav  layui-bg-cyan">
-            	<li><a href="index.jsp" class="homePage" style="font-size:26px;">解忧驿站</a></li>
+            	<li><a href="index.jsp" class="homePage" style="font-size:26px;color:#fff;">解忧驿站</a></li>
             </ul>
 			</div>
 			<div class="header3">
@@ -43,14 +43,14 @@
 	
 	<hr>
 	<div>
-		<div class="left" >
+		<div class="left" style = "height:100px" >
 			<div class="article">
 				<ul >
 					<li id="article_list">
 						<div style='margin-top: 20px;line-height: 30px;'
 							id="article_main">
 							<!-- <h2 style="text-align: center; color: black;">题目题目</h2><p> -->
-							<h2>&nbsp;&nbsp;&nbsp;&nbsp;内容内容........................</h2>
+							<h2>&nbsp;&nbsp;&nbsp;&nbsp;最近又要工作又要写毕设，顶着学校的压力和工作的压力，还有自己的生活上经济压力。</h2>
 						</div>
 					</li>
 				</ul>
@@ -69,7 +69,7 @@
 							style="width: 50px; height: 50px; border-radius: 200px;">&nbsp;&nbsp;</a></li>
 					<!-- <li><a href="#" class="title"> 用户名
 					<span  class="layui-badge layui-bg-green">+ 关注</span></a></li> -->
-					<li><a  href="user.jsp"><b>用户名</b></a></li>
+					<li><a  href="user.jsp"><b>林飘飘</b></a></li>
 					<li>原创：88</li>
 				</ul>
 			</div>

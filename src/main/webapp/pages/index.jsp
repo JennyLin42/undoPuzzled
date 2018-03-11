@@ -39,7 +39,7 @@
 		<div class="layui-row">
 			<div class="logo">
 			<ul class="layui-nav  layui-bg-cyan">
-            	<li><a href="index.jsp" class="homePage" style="font-size:26px;">解忧驿站</a></li>
+            	<li><a href="index.jsp" class="homePage" style="font-size:26px;color:#fff;">解忧驿站</a></li>
             </ul>
 			</div>
 			<div class="header3">
@@ -50,11 +50,14 @@
 			</div>
 		</div>
 	</div>
+	
+
 	<input type="hidden" value=""
 		id="is_login">
 </body>
 </html>
-<div style="height:300px;">
+<div style="height:20px;"></div>
+<div style="height:110px;">
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -63,16 +66,43 @@
 <title>轮播</title>
 </head>
 <body>
-<div class="layui-carousel" id="test1" lay-filter="test1">
+<div class = "left">
+	<form class="layui-form" action="">
+	  <div class="layui-form-item layui-form-text">
+	    <!-- <div class="layui-form-label">
+	        <img alt="" src="images/banner/bannerimg2.gif" style="height:80px;width:80px;radius:15px;  ">
+	    </div>  -->   
+	    <!-- <div class="layui-input-block"> -->
+	      <textarea name="desc" placeholder="说点什么吧..." class="layui-textarea"></textarea>
+	   <!--  </div> -->
+	  </div>
+	</form>
+</div>
+<div class = "right">
+	<div class="site-demo-button" style="margin-top: 20px;">
+		<button class="layui-btn site-demo-layedit" data-type="content">发表帖子</button>
+		<button class="layui-btn layui-btn-primary">重置</button>
+	</div>
+</div>
+<!-- <div class="layui-carousel" id="test1" lay-filter="test1">
   <div carousel-item="">
     <div><img alt="" src="images/banner/bannerimg2.gif" width="100%" height="300px"></div>
     <div><img alt="" src="images/banner/bannerimg1.gif" width="100%" height="300px"></div>
- <!--    <div><img alt="" src="/itdage-show/images/4k3.jpg" width="100%" height="300px"></div>
+    <div><img alt="" src="/itdage-show/images/4k3.jpg" width="100%" height="300px"></div>
     <div><img alt="" src="/itdage-show/images/4k4.jpg" width="100%" height="300px"></div>
-    <div><img alt="" src="/itdage-show/images/4k5.jpg" width="100%" height="300px"></div> -->
+    <div><img alt="" src="/itdage-show/images/4k5.jpg" width="100%" height="300px"></div>
   </div>
-</div>
-<script type="text/javascript">
+</div> -->
+<!-- <script type="text/javascript">
+    //自定义工具栏
+	var index = layedit.build('LAY_demo2', {
+		tool : [ 'strong', 'italic', '|', 'face', '|',
+				'left' ],
+		height : 100
+	})
+</script> -->
+
+<!-- <script type="text/javascript">
 //图片轮播
 layui.use(['carousel', 'form'], function(){
 	  var carousel = layui.carousel
@@ -88,7 +118,7 @@ layui.use(['carousel', 'form'], function(){
 	  
 });
 
-</script>
+</script> -->
 </body>
 </html>
 </div>
@@ -104,17 +134,17 @@ layui.use(['carousel', 'form'], function(){
 							    <img alt=""
 									src="images/小清新.jpg"
 									style="width: 50px; height: 50px; border-radius: 200px;">
-							用户名</a>
+							林飘飘</a>
 						</h3>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<br>
 						
 						<div id='text_id' style='width:100%;height:16px;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;'>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a class='title' target='_blank' href='card.jsp'>内容内容。。。。。。。。。。。内容</a>
+						<a class='title' target='_blank' href='card.jsp'>最近又要工作又要写毕设，顶着学校的压力和工作的压力，还有自己的生活上经济压力。</a>
 						</div>
 						<br><br>
-						<div><p align='right' style='margin-right:20px;'><i class='layui-icon'>&#xe637;</i>&nbsp;<span>时间噢</span>
+						<div><p align='right' style='margin-right:20px;'><i class='layui-icon'>&#xe637;</i>&nbsp;<span>2018-03-11 20：48：00</span>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- <i class='layui-icon'>&#xe612;</i>&nbsp;<span>用户名 </span> -->
 						&nbsp;
@@ -134,17 +164,17 @@ layui.use(['carousel', 'form'], function(){
 							    <img alt=""
 									src="images/小清新.jpg"
 									style="width: 50px; height: 50px; border-radius: 200px;">
-							用户名</a>
+							李春花</a>
 						</h3>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<br>
 						
 						<div id='text_id' style='width:100%;height:16px;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;'>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a class='title' target='_blank' href='card.jsp'>内容内容。。。。。。。。。。。内容</a>
+						<a class='title' target='_blank' href='card.jsp'>小丫头的出生让我们欣喜的同时，也让我们发愁，我爸妈和他爸妈都没空帮忙照顾女儿，难道我只能辞职回到家中做全职母亲了么？</a>
 						</div>
 						<br><br>
-						<div><p align='right' style='margin-right:20px;'><i class='layui-icon'>&#xe637;</i>&nbsp;<span>时间噢</span>
+						<div><p align='right' style='margin-right:20px;'><i class='layui-icon'>&#xe637;</i>&nbsp;<span>2018-03-10 20：48：00</span>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- <i class='layui-icon'>&#xe612;</i>&nbsp;<span>用户名 </span> -->
 						&nbsp;
