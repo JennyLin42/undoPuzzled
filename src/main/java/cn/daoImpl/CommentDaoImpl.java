@@ -18,25 +18,35 @@ public class CommentDaoImpl extends SessionUtil implements CommentDao{
 		Session session=getSession();
 		String hql="from Comment where isCommentDelete <> 1  and cardId = "+cardId;
 		Query query=session.createQuery(hql);
-		query.setFirstResult(0)
-		     .setMaxResults(Constant.pageSize);
-		List<Card> cards=query.list();
-		return null;
+		List<Comment> comments=query.list();
+		return comments;
 	}
 
 	public boolean saveComment(Comment comment) {
 		// TODO Auto-generated method stub
-		return false;
+		Session session=getSession();
+		session.save(comment);
+		return true;
 	}
 
 	public boolean deleteComment(int commentId) {
 		// TODO Auto-generated method stub
-		return false;
+		Session session = getSession();
+		Comment comment = (Comment)session.get(Comment.class, commentId);
+		comment.isCommentDelete = 1;
+		session.update(comment);
+		return true;
 	}
 
 	public boolean deleteCommentByCard(int cardId) {
 		// TODO Auto-generated method stub
-		return false;
+		Session session = getSession();
+		List<Comment> comments = getComment(cardId);
+		for(Comment com: comments){
+			com.isCommentDelete = 1;
+			session.update(com);
+		}
+		return true;
 	}
 
 }
