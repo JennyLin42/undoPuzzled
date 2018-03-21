@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
-        "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
-        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" 
      >  
      
    <!-- 映射文件开始 -->    
@@ -21,6 +21,6 @@
         </many-to-one> -->
         <!-- <many-to-one name="user" class="User" column="userId"></many-to-one> -->
         <!-- 配置 lazy="false" fetch="join" 避免出现懒加载异常 -->
-        <many-to-one name="user" lazy="false"  fetch="join"  column="userId" />  
+        <many-to-one name="user"  column="userId" lazy="false"  fetch="join" />  
      </class>
      </hibernate-mapping>

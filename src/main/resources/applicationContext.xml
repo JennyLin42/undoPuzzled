@@ -83,12 +83,15 @@
     </aop:config>
     
     <!-- 配置Dao类的bean -->
-    
     <bean id="UserDao" class="cn.daoImpl.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
     <bean id="CardDao" class="cn.daoImpl.CardDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="CommentDao" class="cn.daoImpl.CommentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     

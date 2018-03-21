@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE hibernate-mapping PUBLIC 
-        "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
-        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" 
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" 
      >  
      
    <!-- 映射文件开始 -->    
@@ -20,7 +20,7 @@
 	    <!-- <many-to-one name="多端类中定义一端的属性名" class="一端类权限定名" column="多端表中外键名(一端ID)">
         </many-to-one> -->
         <!-- <many-to-one name="user" class="User" column="userId"></many-to-one> -->
-        <many-to-one name="user" column="userId"/>  
-        <many-to-one name="card" column="cardId"/>  
+        <many-to-one name="user" column="userId"  lazy="false"  fetch="join"  />  
+        <many-to-one name="card" column="cardId"   lazy="false"  fetch="join"  />  
      </class>
      </hibernate-mapping>

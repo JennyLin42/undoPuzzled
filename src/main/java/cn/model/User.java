@@ -32,6 +32,10 @@ public class User {
 	public String getHeadPicture() {
 		return headPicture;
 	}
+	public User(int userId) {
+		super();
+		this.userId = userId;
+	}
 	public User() {
 		super();
 	}

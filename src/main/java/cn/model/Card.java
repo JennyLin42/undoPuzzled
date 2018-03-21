@@ -15,6 +15,10 @@ public class Card {
 	
 	
 	
+	public Card(int cardId) {
+		super();
+		this.cardId = cardId;
+	}
 	public Card() {
 		super();
 	}

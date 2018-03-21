@@ -16,5 +16,7 @@ public interface CommentDao {
 	
 	//删除帖子的时候删除该帖子的评论
 	public boolean deleteCommentByCard(int cardId);
+	
+	
 
 }

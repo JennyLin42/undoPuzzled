@@ -15,6 +15,27 @@ public class Comment {
 	
 	
 	
+	public Comment() {
+		super();
+	}
+	public Comment(int commentId, String commentContent, String commentTimeDate, byte isCommentDelete) {
+		super();
+		this.commentId = commentId;
+		this.commentContent = commentContent;
+		this.commentTimeDate = commentTimeDate;
+		this.isCommentDelete = isCommentDelete;
+	}
+	
+	public Comment(int commentId, String commentContent, String commentTimeDate, byte isCommentDelete, Card card,
+			User user) {
+		super();
+		this.commentId = commentId;
+		this.commentContent = commentContent;
+		this.commentTimeDate = commentTimeDate;
+		this.isCommentDelete = isCommentDelete;
+		this.card = card;
+		this.user = user;
+	}
 	@Override
 	public String toString() {
 		return "Comment [commentId=" + commentId + ", commentContent=" + commentContent + ", commentTimeDate="
