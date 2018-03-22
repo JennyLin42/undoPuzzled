@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <!-- 配置上传文件的最大大小 -->
+    <constant name="struts.multipart.maxSize" value="20971520"></constant>
+    <!-- <constant name="com.opensymphony.xwork2.ObjectFactory" value="spring" /> -->
+    
+    
+	<include file="action/card.xml"></include>
+	
+	<!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
+</struts>

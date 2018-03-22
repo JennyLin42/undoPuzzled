@@ -22,3 +22,12 @@
 .header3 {
 	float: right;
 }
+.footer{
+	    float:left;
+		background-color:#393D49;
+		width:1200px;
+		align:center;
+		margin:auto;
+		height:55px;
+		margin-top:20px;
+	}

@@ -95,4 +95,9 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
+    <!-- 配置Action -->
+    <bean id="CardAction" class="cn.action.CardAction">
+        <property name="cardDao" ref="CardDao"></property>
+    </bean>
+    
 </beans>

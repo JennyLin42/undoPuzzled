@@ -31,4 +31,5 @@ public interface CardDao {
 	
 	//µãÔŞ¹¦ÄÜ
 	public boolean goodCard(int cardId);
+	
 }

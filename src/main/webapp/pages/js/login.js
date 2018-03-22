@@ -205,37 +205,6 @@ if (id == -1){
 				  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
 				});
 			  
-			  //修改密码
-			  form.on('submit(modifyPass)', function(data){
-				  var username = $("#email_username").val();
-				  var password = $("#password").val();
-				  $.ajax({
-						url : "/itdage/user2/updateUser/1",
-						dataType : "json",
-						type : "POST",
-						data : {"username":username, "password":password},
-						success : function(data) {
-							if (data.state == 1) {
-								//成功,关闭页面
-								//layer.alert('修改成功!');
-								layer.confirm('修改成功!', {icon: 1, title:'提示'}, function(index){
-									window.location.href = "/itdage-show/login.jsp";
-  									layer.close(index);
-									});
-							}else{
-								layer.msg('修改失败!', {
-									icon : 2
-								});
-							}
-						},
-						error : function(data, type, err) {
-							layer.msg("修改失败!");
-							console.log("ajax错误类型："+type);  
-				            console.log(err);  
-						}
-					});
-				  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-				});
 			  //验证
 			  form.verify({
 					user : function(value) {
