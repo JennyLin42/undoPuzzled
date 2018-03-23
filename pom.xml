@@ -140,6 +140,17 @@
 			<version>3.2</version>
 		</dependency>
 
+<!-- 		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+		</dependency> -->
+
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -148,10 +159,10 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.2</version>
+		<dependency> 
+			<groupId>org.apache.logging.log4j</groupId> 
+			<artifactId>log4j-core</artifactId> 
+			<version>2.2</version> 
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/ognl/ognl -->
@@ -175,13 +186,7 @@
 			<version>2.3.24</version>
 		</dependency>
 
-		<!-- struts2整合spring插件包 -->
-		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-spring-plugin -->
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-spring-plugin</artifactId>
-			<version>2.3.24</version>
-		</dependency>
+		
 
 		<!-- spring-4.3.9导包 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
@@ -337,6 +342,14 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
+		</dependency>
+		
+		<!-- struts2整合spring插件包 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-spring-plugin -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
+			<version>2.3.24</version>
 		</dependency>
 	</dependencies>
 	<build>

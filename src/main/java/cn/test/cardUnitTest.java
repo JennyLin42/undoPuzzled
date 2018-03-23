@@ -71,4 +71,9 @@ public class cardUnitTest {
 		CardDao a =cxt.getBean(CardDao.class);
 		System.out.println(a.goodCard(8));
 	}
+	
+	@Test
+	public void test(){
+		
+	}
 }

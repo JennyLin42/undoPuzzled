@@ -65,7 +65,7 @@
     </div>
 	<div class = "right">
 		<div class="site-demo-button" style="margin-top: 20px;">
-			<button class="layui-btn site-demo-layedit" data-type="content">发表帖子</button>
+			<button class="layui-btn site-demo-layedit" data-type="content" ng-click="sendTest()">发表帖子</button>
 			<button class="layui-btn layui-btn-primary" ng-click="clearTest()">重置</button>
 		</div>
 	</div>

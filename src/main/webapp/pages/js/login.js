@@ -2,7 +2,7 @@
 var url=window.location.href;
 var id=url.indexOf('=');
 
-if (id == -1){
+/*if (id == -1){
 	$(function() {
 		login();
 	});
@@ -10,9 +10,10 @@ if (id == -1){
 	$(function() {
 		register();
 	});
-}
+}*/
 		function login() {
-			$("#LAY_ucm").empty();
+			
+			/*$("#LAY_ucm").empty();
 			$("#LAY_ucm")
 					.append(
 							"<div class='layui-tab-item layui-show'>"
@@ -39,10 +40,8 @@ if (id == -1){
 									+ " </div>"
 									+ " <div class='layui-form-item fly-form-app'>"
 								
-									+ " </div>");
-			//	+ " <span>或者使用社交账号登入</span>"
-					//				+ " <a href='/itdage-show/qqlogin.jsp' onclick='layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})' class='iconfont icon-qq' title='QQ登入'></a>"
-			///user/forget
+									+ " </div>");*/
+			
 		}
 		function register() {
 			$("#LAY_ucm").empty();
@@ -99,156 +98,3 @@ if (id == -1){
 									+ " </div>");
 		}
 		
-		
-		
-		//监听提交
-		layui.use(['form','layer'], function(){
-			  var form = layui.form;
-			  var layer = layui.layer;
-			  
-			  form.on('submit(login)', function(data){
-				  var username = $("#username").val();
-				  var password = $("#password").val();
-				  $.ajax({
-						url : "/itdage-show/user/login",
-						dataType : "json",
-						type : "POST",
-						data : {"username" : username, "password" : password},
-						success : function(data) {
-							if (data.state == 1) {
-								//成功,关闭页面
-								//layer.msg('登录成功!')
-								window.location.href='/itdage-show/index.jsp';
-								//layer.msg("添加成功!");
-							}else{
-								layer.msg(data.message);
-							}
-						},
-						error : function(data, type, err) {
-								console.log("ajax错误类型："+type);
-								console.log(err); 
-							}
-						});
-				  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-				});
-			  form.on('submit(register)', function(data){
-				  $.ajax({
-						url : "/itdage-show/user/register",
-						dataType : "json",
-						type : "POST",
-						contentType: "application/json",
-						data : JSON.stringify(data.field),
-						success : function(data) {
-							if (data.state == 1) {
-								layer.msg(data.message, {icon: 1});
-							}else{
-								//不合法
-								layer.msg(data.message, {icon: 2});
-							}
-						},
-						error : function(data, type, err) {
-								console.log("ajax错误类型："+type);
-								console.log(err); 
-							}
-						});
-				  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-				});
-			  //向邮箱发送验证码
-			  form.on('submit(forget1)', function(data){
-				  var mail = $("#mail").val();
-				  var username = $("#username").val();
-				  $.ajax({
-						url : "/itdage-show/user/getEmailValidCode",
-						dataType : "json",
-						type : "POST",
-						data : {"username":username, "mail":mail},
-						async: false,
-						success : function(data) {
-							if (data.state == 1) {
-								layer.msg(data.message);
-								forget2();
-							}else{
-								//不合法
-								layer.msg(data.message, {icon: 2});
-							}
-						},
-						error : function(data, type, err) {
-								console.log("ajax错误类型："+type);
-								console.log(err); 
-							}
-						});
-				  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-				});
-			  
-			  form.on('submit(forget2)', function(data){
-				  var emailvalidcode = $("#emailvalidcode").val();
-				  $.ajax({
-						url : "/itdage-show/user/validEmailCode",
-						dataType : "json",
-						type : "GET",
-						data : {"code":emailvalidcode},
-						async: false,
-						success : function(data) {
-							if (data.state == 1) {
-								//layer.msg(data.message);
-								modifyPassword();
-							}else{
-								//验证码不正确
-								layer.msg(data.message, {icon: 2});
-							}
-						},
-						error : function(data, type, err) {
-								console.log("ajax错误类型："+type);
-								console.log(err); 
-							}
-						});
-				  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-				});
-			  
-			  //验证
-			  form.verify({
-					user : function(value) {
-						if (value.length <= 0) {
-							return '账号不能为空!';
-						}else if(value.length > 18){
-							return '账号不合法!';
-						} else {
-							var check = validateUsername(value);
-							if (check == 1) {
-								//用户已经存在
-								return '用户已存在!';
-							}
-						}
-					},
-					password : [ /(.+){6,12}$/, '密码必须6到12位' ],
-					confrim_pass : function(value) {
-						var passvalue = $("#password").val();
-						if (passvalue != value) {
-							return '两次密码不一致!';
-						}
-					}
-				});
-			});
-		function validateUsername(username){
-			var check = 0;
-			 $.ajax({
-					url : "/itdage-show/user/get",
-					dataType : "json",
-					type : "GET",
-					data : {"username":username},
-					async : false,
-					success : function(data) {
-						if (data.state == 1) {
-							//不存在此用户
-							check = 1;
-						}else{
-							check = 0;
-						}
-					},
-					error : function(data, type, err) {
-							console.log("ajax错误类型："+type);
-							console.log(err); 
-						}
-					});
-			 return check;
-		}

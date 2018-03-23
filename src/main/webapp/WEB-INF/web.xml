@@ -17,7 +17,7 @@
     <!-- 告知配置文件所在地方-->
     <context-param>     
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>  
+        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
     </context-param>  
     
     <!-- 配置Struts核心控制器 -->
@@ -40,7 +40,7 @@
   
   
   
-  <filter>
+<!--   <filter>
     <display-name>OpenSessionInView</display-name>
     <filter-name>OpenSessionInView</filter-name>
     <filter-class>cn.Filter.OpenSessionInView</filter-class>
@@ -48,5 +48,5 @@
   <filter-mapping>
     <filter-name>OpenSessionInView</filter-name>
     <url-pattern>/OpenSessionInView</url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
 </web-app>

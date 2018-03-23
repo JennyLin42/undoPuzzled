@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>首页</title>
+<title>个人帖子</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"

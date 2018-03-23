@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>文章详情</title>
+<title>帖子详情</title>
 <meta name="renderer" content="webkit">
 <link rel="stylesheet" href="itdage-show/layui/css/layui.css" media="all">
 <link rel="stylesheet" href="style/card.css"><!-- 属于这个界面的CSS -->

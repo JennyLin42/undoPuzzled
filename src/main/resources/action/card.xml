@@ -3,12 +3,10 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <package name="card" extends="struts-default">
-        <!-- 添加地址第一步 -->
+    <package name="card"  extends="struts-default">
         <action name="getTimeCard" class="CardAction" method="getTimeCard" >
-          <!--  成功就跳转到原来订单界面 -->
-            <result name="success">page/card.jsp</result>
+            <result name="success">pages/card.jsp</result>
+            <result name="error">pages/index.jsp</result>
         </action> 
     </package>
-
 </struts>

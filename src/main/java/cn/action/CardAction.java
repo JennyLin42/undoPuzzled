@@ -1,12 +1,16 @@
 package cn.action;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.util.StringUtils;
+
+import com.opensymphony.xwork2.Action;
 
 import cn.dao.CardDao;
 import cn.model.Card;
@@ -16,10 +20,9 @@ public class CardAction {
 	private CardDao cardDao;
 	private int page = 0;
 	
-	public List<Card> getTimeCard(){
-		HttpServletResponse response = ServletActionContext.getResponse();  
+	public String getTimeCard(){
 		HttpServletRequest request = ServletActionContext.getRequest();  
-		response.setContentType("text/html;charset=utf-8"); 
+		Map<String, Object> reMap = new HashMap<String, Object>();
 		
 		String currentPage = request.getParameter("page");
 		List<Card> cards = null;
@@ -29,9 +32,8 @@ public class CardAction {
 			cards = cardDao.getTimeCard(page);
 		}
 		
-		
-		
-		return cards;
+		request.setAttribute("data", cards);
+		return Action.SUCCESS;
 	}
 
 	
@@ -42,6 +44,7 @@ public class CardAction {
 	}
 
 	public void setCardDao(CardDao cardDao) {
+		System.out.println("≈‰÷√carddao");
 		this.cardDao = cardDao;
 	}
 
